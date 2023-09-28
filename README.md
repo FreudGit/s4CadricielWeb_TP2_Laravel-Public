@@ -21,7 +21,8 @@ RÉFÉRENCES:
 
 
 Félicitations, votre client a apprécié votre premier projet et aimerait vous offrir un deuxième mandat pour améliorer le réseau social du collège. Vous souhaitez impliquer toutes les nouvelles connaissances acquises dans le cours Cadriciel Web pour la poursuite de ce projet.
-● Le client souhaite maintenant 
+
+Le client souhaite maintenant 
 -   [ ] ajouter une page de connexion pour que chaque élève puisse se connecter à son propre compte, 
 -   [ ] la table étudiante doit donc être connectée à la table utilisateur (users). 
 -   [ ] Pour maintenir la sécurité du système, le mot de passe doit être crypté (2 pts)
@@ -32,7 +33,7 @@ Félicitations, votre client a apprécié votre premier projet et aimerait vous 
 Pour compléter le système et le mettre en production, le client a demandé 2 autres modifications majeures.
 
 #### Le Forum
-● Le système doit avoir 
+Le système doit avoir 
 -   [ ] un forum dans lequel les étudiants peuvent écrire des articles. 
 -   [ ] Les articles doivent être visibles par tous les étudiants connectés. 
 -   [ ] Seul l'étudiant qui a écrit l'article peut le modifier et/ou le supprimer. (2 pts)
@@ -68,7 +69,4 @@ Vous devez m'envoyer sur Omnivox :
 -   [ ] aussi comme le nom d’utilisateur et le mot de passe d’un étudiant enregistré dans le système. 
 -   [ ] Ajouter dans le document le lien GitHub.
 
-
-- LIEN VERS LE GITHUB: **[GIT DU PROJET](https://github.com/fhmaisonneuve/s4CadricielWeb_TP2_Laravel)**
-- LIEN VERS LE PROJET(WEBDEV): **[https://e2296133.webdev.cmaisonneuve.qc.ca/cadricielwebtp2/](https://e2296133.webdev.cmaisonneuve.qc.ca/cadricielwebtp2/)** 
-   
+---
