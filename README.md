@@ -27,7 +27,7 @@ Le client souhaite maintenant
 -   [ ] la table étudiante doit donc être connectée à la table utilisateur (users). 
 -   [ ] Pour maintenir la sécurité du système, le mot de passe doit être crypté (2 pts)
   
-● Étant donné que les étudiants du collégial sont polyglottes, le client vous a demandé de créer un système multilingue, français en anglais. 
+Étant donné que les étudiants du collégial sont polyglottes, le client vous a demandé de créer un système multilingue, français en anglais. 
 -   [ ] Tout le contenu du système doit être dans les deux langues (2 points)
 
 Pour compléter le système et le mettre en production, le client a demandé 2 autres modifications majeures.
@@ -38,7 +38,7 @@ Le système doit avoir
 -   [ ] Les articles doivent être visibles par tous les étudiants connectés. 
 -   [ ] Seul l'étudiant qui a écrit l'article peut le modifier et/ou le supprimer. (2 pts)
 
-● Pour créer le forum il faut ajouter un tableau dans la base de données, il est important d'enregistrer 
+Pour créer le forum il faut ajouter un tableau dans la base de données, il est important d'enregistrer 
 -  [ ] le titre de l'article, le contenu et la date, 
 -  [ ] les articles peuvent être rédigés en français et en anglais, 
 -  [ ] et le système doit gérer la langue de choix lors de la publication. (2 pts)
