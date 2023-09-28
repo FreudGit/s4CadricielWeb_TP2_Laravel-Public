@@ -31,7 +31,7 @@ Félicitations, votre client a apprécié votre premier projet et aimerait vous 
 
 Pour compléter le système et le mettre en production, le client a demandé 2 autres modifications majeures.
 
-####Le Forum
+#### Le Forum
 ● Le système doit avoir 
 -   [ ] un forum dans lequel les étudiants peuvent écrire des articles. 
 -   [ ] Les articles doivent être visibles par tous les étudiants connectés. 
@@ -42,7 +42,7 @@ Pour compléter le système et le mettre en production, le client a demandé 2 a
 -  [ ] les articles peuvent être rédigés en français et en anglais, 
 -  [ ] et le système doit gérer la langue de choix lors de la publication. (2 pts)
 
-####Le répertoire de documents
+#### Le répertoire de documents
 
 -   [ ] Pour compléter, le système doit disposer d'un répertoire de fichiers, dans lequel les étudiants peuvent partager des documents au format pdf, zip et doc. 
 -   [ ] Ce répertoire doit être accessible par tous les étudiants connectés. 
@@ -60,7 +60,7 @@ Pour compléter le système et le mettre en production, le client a demandé 2 a
 -   [ ] et envoyer le lien dans la documentation. (1 pt)
 
 
-####Déposez le fichier ZIP, sur Léa - Omnivox.
+#### Déposez le fichier ZIP, sur Léa - Omnivox.
 Vous devez m'envoyer sur Omnivox :
 -   [ ] Enregistrez le projet avec une extension ZIP et 
 -   [ ] ajoutez la documentation (lisez-moi) à la racine du projet et la déposer dans omnivox
