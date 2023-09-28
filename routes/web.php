@@ -4,6 +4,7 @@ use App\Http\Controllers\CustomAuthController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtudiantController;
+use App\Http\Controllers\BlogPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,8 @@ Route::get( '/login', [CustomAuthController::class,'index'])->name('login');
 Route::post( '/login', [CustomAuthController::class,'authentification'])->name('login');
 Route::get( '/logout', [CustomAuthController::class,'logout'])->name('logout');
 Route::get( '/user-list', [CustomAuthController::class,'userList'])->name('user.list');
+
+
+Route::get( '/blog', [BlogPostController::class, 'index'])->name('blog.index')->middleware('auth');
+Route::get( '/blog/{blogPost}', [BlogPostController::class, 'show'])->name('blog.show');
 // Route::get('/query', [BlogPostController::class, 'query' ]);

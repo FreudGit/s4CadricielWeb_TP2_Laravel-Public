@@ -38,7 +38,46 @@ Le système doit avoir
 -   [ ] Les articles doivent être visibles par tous les étudiants connectés. 
 -   [ ] Seul l'étudiant qui a écrit l'article peut le modifier et/ou le supprimer. (2 pts)
 
-Pour créer le forum il faut ajouter un tableau dans la base de données, il est important d'enregistrer 
+Pour créer le forum 
+-   [ ] il faut ajouter un tableau dans la base de données, il est important d'enregistrer 
+```
+php artisan make:model Ville
+php artisan make:model Etudiant
+php artisan make:model BlogPost
+    INFO Model [app/Models/BlogPost.php] created successfully.
+    (edit model file)
+
+php artisan make:migration create_villes_table
+    (updater le schema dans le php)
+php artisan make:migration create_etudiants_table
+    (updater le schema dans le php)
+php artisan make:migration create_blogPosts_table
+    INFO Migration [database/migrations/2023_09_28_205026_create_blog_posts_table.php] created successfully.
+    (edit migration file)
+
+php artisan migrate
+    (Table created)
+
+php artisan make:factory VilleFactory
+    (updater le schema dans le VilleFactory.php)
+php artisan make:factory EtudiantFactory
+    (updater le schema dans le EtudiantFactory.php)
+  
+
+php artisan make:factory BlogPostFactory
+    INFO Factory [database/factories/BlogPostsFactory.php] created successfully.
+    (updater le schema dans le BlogPost Factory.php)
+
+
+
+php artisan tinker
+
+> \App\Models\Ville::factory()->times(15)->create();
+> \App\Models\Etudiant::factory()->times(100)->create();
+> \App\Models\BlogPost::factory()->times(15)->create();
+
+
+```
 -  [ ] le titre de l'article, le contenu et la date, 
 -  [ ] les articles peuvent être rédigés en français et en anglais, 
 -  [ ] et le système doit gérer la langue de choix lors de la publication. (2 pts)

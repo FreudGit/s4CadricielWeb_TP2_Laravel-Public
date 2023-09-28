@@ -26,7 +26,7 @@
                     @else
                         <a class="nav-link" href="{{ route('user.list') }}">User List</a>
 
-                        <a class="nav-link" href="{{ route('blog.index') }}">Blog</a>
+                        <a class="nav-link" href="{{ route('etudiant.index') }}">Blog</a>
                         <a class="nav-link" href="{{ route('logout') }}">Logout</a>
                     @endguest
 
