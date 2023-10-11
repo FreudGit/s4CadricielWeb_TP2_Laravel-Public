@@ -5,6 +5,7 @@ use App\Http\Controllers\CustomAuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\BlogPostController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\LocalizationController;
 
 /*
@@ -55,3 +56,9 @@ Route::delete( '/blog-edit/{blogPost}', [BlogPostController::class, 'destroy'])-
 // Route::get('/query', [BlogPostController::class, 'query' ]);
 
 Route::get('/lang/{locale}', [LocalizationController::class, 'index'])->name('lang');
+
+//Documents
+Route::get('/document-create', [DocumentController::class, 'create'])->name('document.create')->middleware('auth');
+Route::post('/document-create', [DocumentController::class, 'store']);
+Route::get('/document', [DocumentController::class, 'index'])->name('document.index')->middleware('auth');
+Route::get('/document/{id}', [DocumentController::class, 'show'])->name('document.show');

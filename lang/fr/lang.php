@@ -14,6 +14,7 @@ return [
     'welcome_p1_subtext' => "Le mandat de ce site est de créer un site Internet pour recueillir de l'information auprès des étudiants du Collège Maisonneuve, et possiblement à l'avenir, de construire un réseau social pour eux.",
     'welcome_p2_subtext' => "Prenez plaisir a parcourir la liste des étudiants. Plus d'options seront disponibles bientôt!",
     'welcome_btn' => 'Bienvenue sur ce site informatif et collaboratif!',
+    'documentadd_title' => 'Ajouter un document',
 
     'text_nav_hello' => 'Bonjour',
     'text_nav_registration' => 'S\'inscrire',
@@ -32,6 +33,14 @@ return [
     'blogadd_title' => 'Ajouter un article',
     'blogs_title' => 'Liste des articles',
 
+    //Documents
+    'documentadd_title' => 'Ajouter article',
+    'documents_title' => 'Liste de documents',
+    'document_item_title' => 'Titre',
+    'document_item_dateadded' => "Date d'ajout",
+    'document_item_uploader' => 'Propriétaire',
+    'document_item_actions' => 'Actions',
+
     'userlist_title' => 'Liste (détaillée) des usagers:',
 
     'name' => 'Nom',
@@ -42,6 +51,7 @@ return [
     'back' => 'Retourner',
     'delete' => 'Effacer',
     'save' => 'Sauvegarder',
+    'view' => 'Voir',
 
 
     'btn_add' => 'Ajouter',

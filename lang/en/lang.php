@@ -38,6 +38,14 @@ return [
     'blogs_title' => 'Lists of articles',
 
 
+    //Documents
+     'documentadd_title' => 'Add article',
+    'documents_title' => 'Lists of documents',
+    'document_item_title'=> 'Title',
+    'document_item_dateadded'=> 'Date added',
+    'document_item_uploader'=> 'Uploader',
+    'document_item_actions' => 'Actions',
+
     'register_btn_register' => 'Proceed',
     'userlist_title' => 'User List (detailed) :',
 
@@ -51,6 +59,9 @@ return [
     'back' => 'Back',
     'lastupdate' => 'Last update:',
     'save' => 'Save',
+    'documentadd_title' => 'Add document',
+    'view' => 'View',
+
 
 
 

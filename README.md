@@ -87,7 +87,10 @@ php artisan tinker
 
 #### Le répertoire de documents
 
--   [ ] Pour compléter, le système doit disposer d'un répertoire de fichiers, dans lequel les étudiants peuvent partager des documents au format pdf, zip et doc. 
+-   [ ] Pour compléter, le système doit disposer d'un répertoire de fichiers, dans lequel les étudiants peuvent partager des documents au format pdf, zip et doc.
+```
+php artisan make:controller DocumentController -m Document 
+``` 
 -   [ ] Ce répertoire doit être accessible par tous les étudiants connectés. 
 -   [ ] Seul l'élève qui a partagé le document peut le modifier et/ou le supprimer. (2 pts)
   
