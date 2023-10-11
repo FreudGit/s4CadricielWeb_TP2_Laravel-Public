@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 @section('title', 'Liste des articles')
 @section('content')
 <hr>

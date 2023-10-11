@@ -28,6 +28,9 @@ Le client souhaite maintenant
 -   [ ] Pour maintenir la sécurité du système, le mot de passe doit être crypté (2 pts)
   
 Étant donné que les étudiants du collégial sont polyglottes, le client vous a demandé de créer un système multilingue, français en anglais. 
+```
+php artisan lang:publish
+```
 -   [ ] Tout le contenu du système doit être dans les deux langues (2 points)
 
 Pour compléter le système et le mettre en production, le client a demandé 2 autres modifications majeures.

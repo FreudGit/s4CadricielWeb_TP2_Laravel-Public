@@ -1,9 +1,9 @@
 @extends('layouts.layout')
-@section('title', 'Bienvenue')
+@section('title', trans('lang.text_main_welcome'))
 @section('content')
 
 <hr>
-<div class="row mt-3">
+<div class="row mt-3  ">
     <div class="col-12">
         <form method="post">
             @method('PUT')
@@ -11,21 +11,20 @@
             <div class="card">
                 <div class="card-header">
                     <div class="float-start">
-                        <h4 class="mt-2">Bienvenue sur ce site informatif et collaboratif!</h4>
+                        <h4 class="mt-2">@lang('lang.welcome_title')</h4>
                     </div>
                 </div>
                 <div class="card-body">
-                    Le mandat de ce site est de créer un site Internet pour recueillir de l'information auprès des
-                    étudiants du Collège Maisonneuve, et possiblement à l'avenir, de construire un réseau social pour
-                    eux.
+                @lang('lang.welcome_p1_subtext')
 
-                    <p class='mt-3'>Prenez plaisir a parcourir la liste des étudiants. Plus d'options seront disponibles
-                        bientôt!</p>
+                    <p class='mt-3'>@lang('lang.welcome_p2_subtext')
+</p>
                 </div>
                 <div class="card-footer ">
                     <div>
                         <a href="{{ route('etudiant.index') }}"
-                            class="btn btn-outline-primary float-end">Afficher les étudiants</a>
+                            class="btn btn-outline-primary float-end">@lang('lang.text_login_btn_login')
+</a>
                     </div>
                 </div>
             </div>

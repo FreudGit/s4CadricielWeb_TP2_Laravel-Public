@@ -2,47 +2,37 @@
 @section('title', 'Liste des articles')
 @section('content')
 
-
 <hr>
-<div class="row mt-3  ">
+<div class="row mt-3 ">
     <div class="col-12">
-        <div class="card  transparent-background">
-            <div class="card-header transparent-background ">
+        <div class="card">
+            <div class="card-header">
                 <div class="float-start">
-                    <h4>Liste des articles</h4>
+                    <h4>Liste des étudiants</h4>
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('blog.create') }}" class="btn btn-dark ml-auto">Ajouter</a>
+                    <a href="{{ route('etudiant.create') }}" class="btn btn-dark ml-auto">Ajouter</a>
                 </div>
             </div>
-            <div class="card-body transparent-background ">
+            <div class="card-body">
                 <ul>
-                    @forelse($posts as $post)
+                    @forelse($etudiants as $etudiant)
                         <div class="card mb-2">
-                            <div class="card-header ">
-                                {{ $post->title }}
-
-                            </div>
                             <div class="card-body  text-left">
-                                <p class="card-text text-left text-lg text-muted">
-                                        {{ Str::limit($post->body, $limit = 200, $end = '...') }}
-
-</p>
+                                <h5 class="card-title">{{ $etudiant->nom }}</h5>
+                                <p class="card-text text-left">{{ $etudiant->adresse }}
+                                    ({{ $etudiant->etudiantHasVille->nom }})</p>
                             </div>
                             <div class="card-footer d-flex justify-content-between align-items-center">
                                 <div>
                                     <small class="text-body-secondary">Dernière mise-à-jour:
-                                        {{ $post->updated_at }}</small>
+                                        {{ $etudiant->updated_at }}</small>
                                 </div>
                                 <div>
-                                    <a href="{{ route('blog.show', $post->id) }}"
+                                    <a href="{{ route('etudiant.show', $etudiant->id) }}"
                                         class="btn btn-primary btn-sm">Infos</a>
-@if(Auth::check() && Auth::user()->id == $post->user_id)
-
-                                    <a href="{{ route('blog.edit', $post->id) }}"
+                                    <a href="{{ route('etudiant.edit', $etudiant->id) }}"
                                         class="btn btn-outline-secondary btn-sm">Éditer</a>
-@endif
-
                                 </div>
                             </div>
                         </div>
@@ -50,7 +40,7 @@
                         <li class='text-danger'>Aucun article disponible</li>
                     @endforelse
                 </ul>
-                <!-- {{ $posts }} -->
+                {{ $etudiants }}
             </div>
         </div>
     </div>

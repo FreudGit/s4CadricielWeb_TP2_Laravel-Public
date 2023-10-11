@@ -5,6 +5,7 @@ use App\Http\Controllers\CustomAuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\BlogPostController;
+use App\Http\Controllers\LocalizationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,4 +46,12 @@ Route::get( '/user-list', [CustomAuthController::class,'userList'])->name('user.
 
 Route::get( '/blog', [BlogPostController::class, 'index'])->name('blog.index')->middleware('auth');
 Route::get( '/blog/{blogPost}', [BlogPostController::class, 'show'])->name('blog.show');
+
+Route::get( '/blog-create', [BlogPostController::class,'create'])->name('blog.create')->middleware('auth');
+Route::post( '/blog-create', [BlogPostController::class,'store']);
+Route::get( '/blog-edit/{blogPost}', [BlogPostController::class, 'edit'])->name('blog.edit');
+Route::put( '/blog-edit/{blogPost}', [BlogPostController::class, 'update']);
+Route::delete( '/blog-edit/{blogPost}', [BlogPostController::class, 'destroy'])->name('blog.delete');;
 // Route::get('/query', [BlogPostController::class, 'query' ]);
+
+Route::get('/lang/{locale}', [LocalizationController::class, 'index'])->name('lang');
