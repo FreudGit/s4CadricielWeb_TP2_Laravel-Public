@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Liste des articles')
+@section('title', 'Liste des étudiants')
 @section('content')
 
 <hr>
@@ -11,7 +11,7 @@
                     <h4>Liste des étudiants</h4>
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('etudiant.create') }}" class="btn btn-dark ml-auto">Ajouter</a>
+                    <a href="{{ route('etudiant.create') }}" class="btn btn-dark ml-auto">@lang('lang.btn_add')</a>
                 </div>
             </div>
             <div class="card-body">
@@ -25,14 +25,14 @@
                             </div>
                             <div class="card-footer d-flex justify-content-between align-items-center">
                                 <div>
-                                    <small class="text-body-secondary">Dernière mise-à-jour:
+                                    <small class="text-body-secondary">@lang('lang.lastupdate')
                                         {{ $etudiant->updated_at }}</small>
                                 </div>
                                 <div>
                                     <a href="{{ route('etudiant.show', $etudiant->id) }}"
                                         class="btn btn-primary btn-sm">Infos</a>
                                     <a href="{{ route('etudiant.edit', $etudiant->id) }}"
-                                        class="btn btn-outline-secondary btn-sm">Éditer</a>
+                                        class="btn btn-outline-secondary btn-sm">@lang('lang.btn_edit')</a>
                                 </div>
                             </div>
                         </div>

@@ -2,10 +2,7 @@
 
 return [
     'text_hello' => 'Bonjour',
-    'text_register' => 'Enregistrer user',
-    'text_name' => 'Name',
-    'text_email' => 'eMail',
-    'text_password' => 'Password',
+ 
     'text_sign_up' => 'Sign up',
     'text_data_insert' => 'Data inserted',
 
@@ -22,9 +19,34 @@ return [
     'text_nav_registration' => 'S\'inscrire',
     'text_nav_login' => 'Se connecter',
 
-    'text_login_title' => 'Connecter',
-    'text_login_email' => 'Courriel',
-    'text_login_password' => 'Mot de passe',
-    'text_login_btn_login' => 'Connecter',
+    'login_name' => 'Nom',
+    'login_title' => 'Connecter',
+    'login_email' => 'Courriel',
+    'login_password' => 'Mot de passe',
+    'login_btn_login' => 'Connecter',
+
+    'register_title' => 'Enregistrement',
+
+    'register_btn_register' => 'Procéder',
+    'blog_title' => 'Blog',
+    'blogadd_title' => 'Ajouter un article',
+    'blogs_title' => 'Liste des articles',
+
+    'userlist_title' => 'Liste (détaillée) des usagers:',
+
+    'name' => 'Nom',
+    'email' => 'Courriel',
+    'posts' => 'Articles',
+    'noposts' => 'Aucun Articles',
+    'update' => 'Mettre à jour',
+    'back' => 'Retourner',
+    'delete' => 'Effacer',
+    'save' => 'Sauvegarder',
+
+
+    'btn_add' => 'Ajouter',
+    'btn_edit' => 'Éditer',
+
+    'lastupdate' => 'Dernière mise-à-jour:',
 
 ];

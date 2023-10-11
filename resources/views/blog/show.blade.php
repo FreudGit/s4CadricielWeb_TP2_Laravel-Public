@@ -1,10 +1,11 @@
 @extends('layouts.layout')
-@section('title', 'Liste des articles')
+@section('title', trans('lang.blog_title'))
 @section('content')
 <hr>
 <div class="row">
     <div class="col-12 pt-2">
-        <a href="{{ route('blog.index') }}" class="btn btn-outline-primary btn-sm">Retourner</a>
+        <a href="{{ route('blog.index') }}" class="btn btn-outline-primary btn-sm">@lang('lang.back')
+</a>
         <h4 class="display-4 mt-5">
             {{ $blogPost->title }}
         </h4>
@@ -20,13 +21,13 @@
 <hr>
 <div class="row mb-5">
     <div class="col-6">
-        <a href="{{ route('blog.edit', $blogPost->id) }}" class="btn btn-primary">Mettre a
-            jour</a>
+        <a href="{{ route('blog.edit', $blogPost->id) }}" class="btn btn-primary">@lang('lang.update')
+</a>
     </div>
     <div class="col-6">
 
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
-            effacer
+            @lang('lang.delete')
         </button>
 
     </div>

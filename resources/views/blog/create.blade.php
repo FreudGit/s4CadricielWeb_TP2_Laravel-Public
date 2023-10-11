@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 @section('title', 'Ajoutre un article')
 @section('content')
 
         <div class="row">
             <div class="col-12 text-center pt-2">
                 <h1 class="display-one">
-                    Ajouter un article
+                    @lang('lang.blogadd_title')
                 </h1>
             </div> <!--/col-12-->
         </div><!--/row-->
@@ -30,7 +30,7 @@
                                 </div>
                         </div>
                         <div class="card-footer">
-                            <input type="submit" class="btn btn-success">
+                            <input type="submit" class="btn btn-success" value="@lang('lang.save')">
                         </div>
                     </form>
                 </div>

@@ -1,11 +1,11 @@
 @extends('layouts.layout')
-@section('title', 'Mettre a jour')
+@section('title', trans('lang.update'))
 @section('content')
 
         <div class="row">
             <div class="col-12 text-center pt-2">
                 <h1 class="display-one">
-                    Mettre a jour
+                    @lang('lang.update')
                 </h1>
             </div> <!--/col-12-->
         </div><!--/row-->
@@ -30,7 +30,7 @@
                                 </div>
                         </div>
                         <div class="card-footer">
-                            <input type="submit" class="btn btn-success">
+                            <input type="submit" class="btn btn-success" value="@lang('lang.save')">
                         </div>
                     </form>
                 </div>

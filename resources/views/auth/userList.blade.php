@@ -1,6 +1,6 @@
 @extends('layouts/layout')
 
-@section('title', "Liste d'usagers")
+@section('title', trans('lang.userlist_title'))
 
 @section('content')
 
@@ -8,16 +8,16 @@
 
 <div class="card text-start">
     <div class="card-header">
-        <h3> Liste des usagers:</h3>
+        <h3> @lang('lang.userlist_title')</h3>
     </div>
     <div class="card-body">
         <table class="table table-striped">
             <thead>
                 <tr>
                     <!-- <th>#</th> -->
-                    <th>Name</th>
-                    <th>email</th>
-                    <th>Posts</th>
+                    <th>@lang('lang.name')</th>
+                    <th>@lang('lang.email')</th>
+                    <th>@lang('lang.posts')</th>
 
                 </tr>
             </thead>
@@ -36,7 +36,7 @@
                                     </li>
 
                                 @empty
-                                    <li>Pas de posts</li>
+                                    <li>@lang('lang.noposts')</li>
                                 @endforelse
                             </ul>
                         </td>

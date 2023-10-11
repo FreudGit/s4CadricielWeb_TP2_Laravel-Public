@@ -2,10 +2,7 @@
 
 return [
 
-    'text_register' => 'Register user',
-    'text_name' => 'Name',
-    'text_email' => 'eMail',
-    'text_password' => 'Password',
+  
     'text_sign_up' => 'Sign up',
     'text_data_insert' => 'Data inserted',
 
@@ -27,11 +24,35 @@ return [
     'text_nav_registration' => 'Registration',
     'text_nav_login' => 'Login',
 
+    'login_name' => 'Name',
+    'login_title' => 'Connection',
+    'login_email' => 'Email',
+    'login_password' => 'Password',
+    'login_btn_login' => 'Connect',
 
-    'text_login_title' => 'Connection',
-    'text_login_email' => 'Email',
-    'text_login_password' => 'Password',
-    'text_login_btn_login' => 'Connect',
+    'register_title' => 'Registration',
+    'blog_title' => 'Blog',
+    'delete' => 'Delete',
+
+    'blogadd_title' => 'Add article',
+    'blogs_title' => 'Lists of articles',
+
+
+    'register_btn_register' => 'Proceed',
+    'userlist_title' => 'User List (detailed) :',
+
+    'btn_add' => 'Add',
+    'btn_edit' => 'Edit',
+    'name' => 'Name',
+    'email' => 'Email',
+    'posts' => 'Posts',
+    'noposts' => 'No posts',
+    'update' => 'Update',
+    'back' => 'Back',
+    'lastupdate' => 'Last update:',
+    'save' => 'Save',
+
+
 
 
 ];

@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Liste des articles')
+@section('title', trans('lang.blogs_title'))
 @section('content')
 
 
@@ -9,10 +9,10 @@
         <div class="card  transparent-background">
             <div class="card-header transparent-background ">
                 <div class="float-start">
-                    <h4>Liste des articles</h4>
+                    <h4>@lang('lang.blogs_title')</h4>
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('blog.create') }}" class="btn btn-dark ml-auto">Ajouter</a>
+                    <a href="{{ route('blog.create') }}" class="btn btn-dark ml-auto">@lang('lang.btn_add')</a>
                 </div>
             </div>
             <div class="card-body transparent-background ">
@@ -31,7 +31,7 @@
                             </div>
                             <div class="card-footer d-flex justify-content-between align-items-center">
                                 <div>
-                                    <small class="text-body-secondary">Dernière mise-à-jour:
+                                    <small class="text-body-secondary">@lang('lang.lastupdate')
                                         {{ $post->updated_at }}</small>
                                 </div>
                                 <div>
@@ -40,7 +40,7 @@
 @if(Auth::check() && Auth::user()->id == $post->user_id)
 
                                     <a href="{{ route('blog.edit', $post->id) }}"
-                                        class="btn btn-outline-secondary btn-sm">Éditer</a>
+                                        class="btn btn-outline-secondary btn-sm">@lang('lang.btn_edit')</a>
 @endif
 
                                 </div>
