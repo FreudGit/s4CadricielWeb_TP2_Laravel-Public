@@ -20,7 +20,7 @@
         <div class="container-fluid">
             @php $locale = session()->get('locale'); @endphp
 
-            <a class="navbar-brand" href="#">@lang('lang.text_nav_hello')
+            <a class="navbar-brand" href="{{ route('root') }}">@lang('lang.nav_hello')
                 {{ Auth::user() ? Auth::user()->name: "guest" }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,12 +29,16 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
         @guest
-            <a class="nav-link" href="{{ route('user.create') }}">@lang('lang.text_nav_registration')</a>
-            <a class="nav-link" href="{{ route('login') }}">@lang('lang.text_nav_login')</a>
+            <a class="nav-link" href="{{ route('user.create') }}">@lang('lang.nav_registration')</a>
+            <a class="nav-link" href="{{ route('login') }}">@lang('lang.nav_login')</a>
         @else
-            <a class="nav-link" href="{{ route('user.list') }}">User List</a>
-            <a class="nav-link" href="{{ route('etudiant.index') }}">Blog</a>
-            <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+        <a class="nav-link" href="{{ route('etudiant.index') }}">@lang('lang.nav_students')</a>
+   
+        <a class="nav-link" href="{{ route('user.list') }}">@lang('lang.nav_studentsDetail')</a>
+        <a class="nav-link" href="{{ route('blog.index') }}">@lang('lang.nav_blogs')</a>
+        <a class="nav-link" href="{{ route('document.index') }}">@lang('lang.nav_documents')</a>
+
+        <a class="nav-link" href="{{ route('logout') }}">Logout</a>
         @endguest
     </div>
     

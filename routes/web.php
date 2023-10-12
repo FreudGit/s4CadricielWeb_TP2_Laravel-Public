@@ -21,7 +21,7 @@ use App\Http\Controllers\LocalizationController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('root');;
 
 
 Route::get( '/index', [EtudiantController::class, 'index'])->name('etudiant.index');
@@ -61,4 +61,7 @@ Route::get('/lang/{locale}', [LocalizationController::class, 'index'])->name('la
 Route::get('/document-create', [DocumentController::class, 'create'])->name('document.create')->middleware('auth');
 Route::post('/document-create', [DocumentController::class, 'store']);
 Route::get('/document', [DocumentController::class, 'index'])->name('document.index')->middleware('auth');
-Route::get('/document/{id}', [DocumentController::class, 'show'])->name('document.show');
+Route::get('/document/{document}', [DocumentController::class, 'show'])->name('document.show');
+
+Route::get('documents/{document}/download', [DocumentController::class, 'download'])
+    ->name('documents.download');

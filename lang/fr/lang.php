@@ -16,9 +16,13 @@ return [
     'welcome_btn' => 'Bienvenue sur ce site informatif et collaboratif!',
     'documentadd_title' => 'Ajouter un document',
 
-    'text_nav_hello' => 'Bonjour',
-    'text_nav_registration' => 'S\'inscrire',
-    'text_nav_login' => 'Se connecter',
+    'nav_hello' => 'Bonjour',
+    'nav_registration' => 'S\'inscrire',
+    'nav_login' => 'Se connecter',
+    'nav_students' => 'Étudiants',
+    'nav_studentsDetail' => 'Étudiants (détaillé)',
+    'nav_blogs' => 'Blog',
+    'nav_documents' => 'Documents',
 
     'login_name' => 'Nom',
     'login_title' => 'Connecter',
@@ -30,8 +34,8 @@ return [
 
     'register_btn_register' => 'Procéder',
     'blog_title' => 'Blog',
-    'blogadd_title' => 'Ajouter un article',
-    'blogs_title' => 'Liste des articles',
+    'blogadd_title' => 'Ajouter un blog',
+    'blogs_title' => 'Liste de blogs',
 
     //Documents
     'documentadd_title' => 'Ajouter article',
@@ -40,7 +44,7 @@ return [
     'document_item_dateadded' => "Date d'ajout",
     'document_item_uploader' => 'Propriétaire',
     'document_item_actions' => 'Actions',
-
+'documentedit_title' => 'Editer le document',
     'userlist_title' => 'Liste (détaillée) des usagers:',
 
     'name' => 'Nom',
@@ -52,6 +56,8 @@ return [
     'delete' => 'Effacer',
     'save' => 'Sauvegarder',
     'view' => 'Voir',
+    'viewMore' => 'Voir plus...',
+    'download' => 'Télécharger',
 
 
     'btn_add' => 'Ajouter',

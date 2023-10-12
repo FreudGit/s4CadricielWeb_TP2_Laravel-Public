@@ -82,9 +82,19 @@ class DocumentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Document $document)
+    public function show(Document $dowcument)
     {
-        //
+        //return $document;
+        $document= (object) [
+            'id' => 1,
+            'user_id' => 1,
+
+            'title_fr' => 'Document en français 1',
+            'title_en' => 'Document in English 1',
+            'created_at' => now()->subDays(1),
+            'user' => (object) ['name' => 'User 1']
+        ];
+        return view('document.show', ['document' => $document]);
     }
 
     /**
@@ -129,4 +139,16 @@ class DocumentController extends Controller
 
         return redirect()->back()->with('success', 'Document deleted successfully.');
     }
+
+    public function download(Document $document)
+    {
+        // Ensure the user is authorized to download the file
+        // You may define your own logic here.
+        if (Auth::id() !== $document->user_id) {
+            return redirect()->back()->with('error', 'Unauthorized access.');
+        }
+
+        return response()->download(storage_path("app/{$document->file_path}"));
+    }
+
 }

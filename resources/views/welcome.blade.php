@@ -23,7 +23,7 @@
                 <div class="card-footer ">
                     <div>
                         <a href="{{ route('etudiant.index') }}"
-                            class="btn btn-outline-primary float-end">@lang('lang.text_login_btn_login')
+                            class="btn btn-outline-primary float-end">@lang('lang.viewMore')
 </a>
                     </div>
                 </div>

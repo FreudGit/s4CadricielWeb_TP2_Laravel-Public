@@ -30,9 +30,14 @@
         <td>{{ $document->user->name }}</td>
         <td>
             <a href="{{ route('document.show', $document->id) }}" class="btn btn-info btn-sm">@lang('lang.view')</a>
+            <a href="{{ route('documents.download', $document->id) }}" class="btn btn-secondary btn-sm">
+                @lang('lang.download')
+                </a>
+            
             @if (auth()->id() === $document->user_id)
             <a href="{{ route('document.edit', $document->id) }}" class="btn btn-primary btn-sm">@lang('lang.edit')</a>
-            <!-- Vous pouvez également ajouter un bouton pour supprimer ici si vous le souhaitez -->
+
+
             @endif
         </td>
         </tr>

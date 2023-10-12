@@ -20,9 +20,14 @@ return [
 
 
 
-    'text_nav_hello' => 'Hello',
-    'text_nav_registration' => 'Registration',
-    'text_nav_login' => 'Login',
+    'nav_hello' => 'Hello',
+    'nav_registration' => 'Registration',
+    'nav_login' => 'Login',
+    'nav_students' => 'Students',
+    'nav_studentsDetail' => 'Students (detailed)',
+    'nav_blogs' => 'Blog',
+    'nav_documents' => 'Documents',
+
 
     'login_name' => 'Name',
     'login_title' => 'Connection',
@@ -60,7 +65,11 @@ return [
     'lastupdate' => 'Last update:',
     'save' => 'Save',
     'documentadd_title' => 'Add document',
+    'documentedit_title' => 'Edit document',
+
     'view' => 'View',
+    'viewMore' => 'View more...',
+    'download' => 'Download',
 
 
 
