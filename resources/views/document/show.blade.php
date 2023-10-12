@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Modifier un document')
+@section('title', trans('lang.documentedit_title'))
 @section('content')
 
 <div class="row"> <div class="col-12 text-center pt-2"> <h1 class="display-one">
@@ -16,7 +16,7 @@
     @method('PUT') <!-- Specifying the HTTP method to be used -->
 
     <div class="card-header">
-    Formulaires
+    @lang('lang.form'):
     </div>
 
     <div class="card-body">

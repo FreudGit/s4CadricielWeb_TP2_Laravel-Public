@@ -38,7 +38,7 @@
         <a class="nav-link" href="{{ route('blog.index') }}">@lang('lang.nav_blogs')</a>
         <a class="nav-link" href="{{ route('document.index') }}">@lang('lang.nav_documents')</a>
 
-        <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+        <a class="nav-link" href="{{ route('logout') }}">@lang('lang.nav_Logout')</a>
         @endguest
     </div>
     

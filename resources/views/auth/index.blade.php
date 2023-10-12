@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Login')
+@section('title', trans('lang.Login'))
 @section('content')
 <hr>
 

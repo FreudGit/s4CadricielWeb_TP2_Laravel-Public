@@ -23,6 +23,8 @@ return [
     'nav_studentsDetail' => 'Étudiants (détaillé)',
     'nav_blogs' => 'Blog',
     'nav_documents' => 'Documents',
+    'nav_Logout' => 'Se déconnecter',
+    'Login' => 'Connection',
 
     'login_name' => 'Nom',
     'login_title' => 'Connecter',
@@ -47,6 +49,15 @@ return [
 'documentedit_title' => 'Editer le document',
     'userlist_title' => 'Liste (détaillée) des usagers:',
 
+'etudiants_index_title' => 'Liste des étudiants',
+    'etudiant_backto_etudiants' => "Retour à liste d'étudiants",
+    'etudiant_add_title' => 'Ajouter un étudiant',
+    'etudiant_add_form_title' => "Informations sur l'étudiant",
+
+    'etudiant_edit_title' => 'Éditer un étudiant',
+    'etudiant_add_title' => 'Ajouter un étudiant',
+
+
     'name' => 'Nom',
     'email' => 'Courriel',
     'posts' => 'Articles',
@@ -58,7 +69,21 @@ return [
     'view' => 'Voir',
     'viewMore' => 'Voir plus...',
     'download' => 'Télécharger',
+    'form' => 'formulaire',
+    'telephone' => 'Téléphone',
+    'address' => 'Adresse',
+    'city' => 'Ville',
+    'birthdate' => 'Date de naissance',
+    'nocityavailable' => 'Aucune ville disponible',
 
+   
+    'Choosecity' => 'Choisir une ville',
+    'Delete' => 'Supprimer',
+    'Close' => 'Fermer',
+'Areyousuredeletedata' => 'Voulez-vous vraiment effacer la donnée?',
+
+
+'Nodataavailable' => 'Aucune donnée disponible',
 
     'btn_add' => 'Ajouter',
     'btn_edit' => 'Éditer',

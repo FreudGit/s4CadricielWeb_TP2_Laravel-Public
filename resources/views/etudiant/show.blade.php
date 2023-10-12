@@ -1,17 +1,16 @@
 @extends('layouts.layout')
-@section('title', 'Informations sur étudiant')
+@section('title', trans('lang.etudiant_add_title'))
 @section('content')
 
 <div class="row">
     <div class="col-12 text-center pt-2">
         <a href="{{ route('etudiant.index') }}"
-            class="btn btn-outline-primary btn-sm float-start">Retour à liste d'étudiants</a>
+            class="btn btn-outline-primary btn-sm float-start">@lang('lang.etudiant_backto_etudiants')</a>
         <h1 class="display-one">
-            Informations sur étudiant
+            @lang('lang.etudiant_add_title')
         </h1>
     </div>
 </div>
-
 <hr>
 <div class="row mt-3">
     <div class="col-12">
@@ -21,28 +20,28 @@
             <div class="card">
                 <div class="card-header">
                     <div class="float-start">
-                        <h4>Informations sur l'étudiant: {{ $etudiant->nom }}</h4>
+                        <h4>@lang('lang.etudiant_add_form_title'): {{ $etudiant->nom }}</h4>
                     </div>
                 </div>
                 <div class="card-body">
                     <p class='d-flex flex-column'>
                         <div>
-                            <strong>Nom: </strong> {{ $etudiant->nom }}
+                            <strong>@lang('lang.name'): </strong> {{ $etudiant->nom }}
                         </div>
                         <div>
-                            <strong>Date de naissance: </strong> {{ $etudiant->date_de_naissance }}
+                            <strong>@lang('lang.birthdate'): </strong> {{ $etudiant->date_de_naissance }}
                         </div>
                         <div>
-                            <strong>Adresse: </strong> {{ $etudiant->adresse }}
+                            <strong>@lang('lang.address'): </strong> {{ $etudiant->adresse }}
                         </div>
                         <div>
-                            <strong>Ville: </strong> {{ $etudiant->etudiantHasVille->nom }}
+                            <strong>@lang('lang.city'): </strong> {{ $etudiant->etudiantHasVille->nom }}
                         </div>
                         <div>
-                            <strong>Courriel: </strong> {{ $etudiant->email }}
+                            <strong>@lang('lang.email'): </strong> {{ $etudiant->email }}
                         </div>
                         <div>
-                            <strong>Téléphone: </strong> {{ $etudiant->phone }}
+                            <strong>@lang('lang.telephone'): </strong> {{ $etudiant->phone }}
                         </div>
                     </p>
                 </div>

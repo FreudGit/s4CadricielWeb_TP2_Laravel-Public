@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Ajouter un utilisateur')
+@section('title', trans('lang.register_title'))
 @section('content')
 <hr>
 <div class="row justify-content-center">
@@ -43,7 +43,8 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-grid mx-auto">
-                        <input type="submit" class="btn btn-success btn-block" value="@lang('lang.register_btn_register')">
+                        <input type="submit" class="btn btn-success btn-block"
+                            value="@lang('lang.register_btn_register')">
                     </div>
                 </div>
             </form>

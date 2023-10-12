@@ -27,6 +27,7 @@ return [
     'nav_studentsDetail' => 'Students (detailed)',
     'nav_blogs' => 'Blog',
     'nav_documents' => 'Documents',
+    'nav_Logout' => 'Logout',
 
 
     'login_name' => 'Name',
@@ -51,6 +52,17 @@ return [
     'document_item_uploader'=> 'Uploader',
     'document_item_actions' => 'Actions',
 
+
+
+    //etudiant
+    'etudiant_backto_etudiants' => "Back to students",
+    'etudiant_add_title' => 'Add student',
+    'etudiant_add_form_title' => "Informations about student",
+
+    'etudiant_edit_title' => 'Edit student',
+    'etudiants_index_title' => 'List of students',
+
+
     'register_btn_register' => 'Proceed',
     'userlist_title' => 'User List (detailed) :',
 
@@ -70,8 +82,19 @@ return [
     'view' => 'View',
     'viewMore' => 'View more...',
     'download' => 'Download',
+    'form' => 'Form',
+    'Choosecity' => 'Choose a city',
+    'Nodataavailable' => 'No data available',
+    'Login' => 'Login',
 
-
+    'telephone' => 'Phone',
+    'address' => 'Address',
+    'city' => 'City',
+    'birthdate' => 'Birthdate',
+    'nocityavailable' => 'No city available',
+    'Delete' => 'Delete',
+    'Close' => 'Close',
+    'Areyousuredeletedata' => 'Are you sure you want to delete the data?',
 
 
 

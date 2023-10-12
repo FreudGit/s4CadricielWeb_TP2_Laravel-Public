@@ -2,16 +2,15 @@
 @section('title', 'Ajout étudiant')
 @section('content')
 <div class="row">
-
-
-    <div class="col-12 text-center pt-2">
-        <a href="{{ route('etudiant.index') }}"
-            class="btn btn-outline-primary btn-sm float-start">Retour à liste d'étudiants</a>
+    <div class="col-12 text-center pt-2"> <a href="{{ route('etudiant.index') }}"
+            class="btn btn-outline-primary btn-sm float-start">@lang('lang.etudiant_backto_etudiants')</a>
         <h1 class="display-one">
-            Ajouter un étudiant
+            @lang('lang.etudiant_add_title')
         </h1>
     </div>
 </div>
+
+
 
 <hr>
 <div class="row mt-3">
@@ -23,38 +22,38 @@
 
                 <div class="card-header">
                     <div class="float-start">
-                        <h4>Informations sur l'étudiant</h4>
+                        <h4>@lang('lang.etudiant_add_form_title')</h4>
                     </div>
 
 
                 </div>
                 <div class="card-body">
                     <div class="control-grup col-12">
-                        <label for="nom">Nom</label>
+                        <label for="nom">@lang('lang.name')</label>
                         <input type="text" id="nom" name="nom" class="form-control" value="" required>
                     </div>
 
                     <div class="control-grup col-12">
-                        <label for="date_de_naissance">Date de naissance</label>
+                        <label for="date_de_naissance">@lang('lang.birthdate')</label>
                         <input type="date" id="date_de_naissance" name="date_de_naissance" class="form-control" value=""
                             required>
                     </div>
 
 
                     <div class="control-grup col-12">
-                        <label for="adresse">Adresse</label>
+                        <label for="adresse">@lang('lang.address')</label>
                         <input type="text" id="adresse" name="adresse" class="form-control" value="" required>
                     </div>
 
                     <div class="control-grup col-12">
-                        <label for="ville_id">Ville</label>
+                        <label for="ville_id">@lang('lang.city')</label>
                         <select name="ville_id" id="ville_id" class="form-control" required>
-                            <option value="">Choisir une ville</option>
+                            <option value="">@lang('lang.Choosecity')</option>
                             @forelse($villes as $ville)
                                 //selected if = ville_id
                                 <option value="{{ $ville->id }}">{{ $ville->nom }} </option>
                             @empty
-                                <option value="">Aucune ville disponible</option>
+                                <option value="">@lang('lang.nocityavailable')</option>
                             @endforelse
                         </select>
 
@@ -62,12 +61,12 @@
                     </div>
 
                     <div class="control-grup col-12">
-                        <label for="email">Courriel</label>
+                        <label for="email">@lang('lang.email')</label>
                         <input type="email" id="email" name="email" class="form-control" value="" required>
                     </div>
 
                     <div class="control-grup col-12">
-                        <label for="phone">Telephone</label>
+                        <label for="phone">@lang('lang.telephone')</label>
                         <input type="tel" id="phone" name="phone" class="form-control" value="" required>
                     </div>
 
@@ -77,7 +76,7 @@
 
                     </div>
                     <div>
-                        <input type="submit" class="btn btn-success" value='Sauvegarder'>
+                        <input type="submit" class="btn btn-success" value="@lang('lang.save')">
                     </div>
                 </div>
 

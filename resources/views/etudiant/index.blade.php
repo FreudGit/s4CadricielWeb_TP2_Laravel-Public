@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Liste des étudiants')
+@section('title', trans('lang.etudiants_index_title'))
 @section('content')
 
 <hr>
@@ -8,10 +8,11 @@
         <div class="card">
             <div class="card-header">
                 <div class="float-start">
-                    <h4>Liste des étudiants</h4>
+                    <h4>@lang('lang.etudiants_index_title')</h4>
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('etudiant.create') }}" class="btn btn-dark ml-auto">@lang('lang.btn_add')</a>
+                    <a href="{{ route('etudiant.create') }}"
+                        class="btn btn-dark ml-auto">@lang('lang.btn_add')</a>
                 </div>
             </div>
             <div class="card-body">
@@ -37,7 +38,7 @@
                             </div>
                         </div>
                     @empty
-                        <li class='text-danger'>Aucun article disponible</li>
+                        <li class='text-danger'>@lang('lang.Nodataavailable')</li>
                     @endforelse
                 </ul>
                 {{ $etudiants }}
