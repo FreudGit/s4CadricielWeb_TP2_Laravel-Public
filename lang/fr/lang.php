@@ -2,7 +2,7 @@
 
 return [
     'text_hello' => 'Bonjour',
- 
+
     'text_sign_up' => 'Sign up',
     'text_data_insert' => 'Data inserted',
 
@@ -46,10 +46,10 @@ return [
     'document_item_dateadded' => "Date d'ajout",
     'document_item_uploader' => 'Propriétaire',
     'document_item_actions' => 'Actions',
-'documentedit_title' => 'Editer le document',
+    'documentedit_title' => 'Editer le document',
     'userlist_title' => 'Liste (détaillée) des usagers:',
 
-'etudiants_index_title' => 'Liste des étudiants',
+    'etudiants_index_title' => 'Liste des étudiants',
     'etudiant_backto_etudiants' => "Retour à liste d'étudiants",
     'etudiant_add_title' => 'Ajouter un étudiant',
     'etudiant_add_form_title' => "Informations sur l'étudiant",
@@ -76,14 +76,14 @@ return [
     'birthdate' => 'Date de naissance',
     'nocityavailable' => 'Aucune ville disponible',
 
-   
+
     'Choosecity' => 'Choisir une ville',
     'Delete' => 'Supprimer',
     'Close' => 'Fermer',
-'Areyousuredeletedata' => 'Voulez-vous vraiment effacer la donnée?',
+    'Areyousuredeletedata' => 'Voulez-vous vraiment effacer la donnée?',
 
 
-'Nodataavailable' => 'Aucune donnée disponible',
+    'Nodataavailable' => 'Aucune donnée disponible',
 
     'btn_add' => 'Ajouter',
     'btn_edit' => 'Éditer',
