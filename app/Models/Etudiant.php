@@ -13,7 +13,8 @@ class Etudiant extends Model
 
 
 
-    public function etudiantHasVille(){
+    public function etudiantHasVille()
+    {
         return $this->hasOne('App\Models\Ville', 'id', 'ville_id');
 
     }

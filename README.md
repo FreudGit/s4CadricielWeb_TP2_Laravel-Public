@@ -57,20 +57,21 @@ php artisan make:migration create_etudiants_table
 php artisan make:migration create_blogPosts_table
     INFO Migration [database/migrations/2023_09_28_205026_create_blog_posts_table.php] created successfully.
     (edit migration file)
-
-php artisan migrate
-    (Table created)
+php artisan make:migration create_documents_table
+    (updater le schema dans le php)
 
 php artisan make:factory VilleFactory
     (updater le schema dans le VilleFactory.php)
 php artisan make:factory EtudiantFactory
     (updater le schema dans le EtudiantFactory.php)
-  
-
+hp artisan make:factory DocumentFactory
+    (updater le schema dans le EtudiantFactory.php)
 php artisan make:factory BlogPostFactory
     INFO Factory [database/factories/BlogPostsFactory.php] created successfully.
     (updater le schema dans le BlogPost Factory.php)
 
+php artisan migrate
+    (Table created)
 
 
 php artisan tinker

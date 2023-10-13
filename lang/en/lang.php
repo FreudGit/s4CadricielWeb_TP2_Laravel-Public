@@ -51,6 +51,11 @@ return [
     'document_item_dateadded'=> 'Date added',
     'document_item_uploader'=> 'Uploader',
     'document_item_actions' => 'Actions',
+    'document_item_titleinenglish' => 'Title in English',
+    'document_item_titleinfrench' => 'Title in French',
+    'document_item_selectafile' => 'Select a file',
+    'documentshow_title' => 'Informations',
+
 
 
 
@@ -86,6 +91,7 @@ return [
     'Choosecity' => 'Choose a city',
     'Nodataavailable' => 'No data available',
     'Login' => 'Login',
+    'edit' => 'Edit',
 
     'telephone' => 'Phone',
     'address' => 'Address',

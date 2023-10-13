@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Ajouter un document')
+@section('title', trans('lang.documentadd_title'))
 @section('content')
 
 <div class="row"> <div class="col-12 text-center pt-2">
@@ -16,17 +16,17 @@
             @csrf
 
             <div class="card-header">
-                Formulaire
+                @lang('lang.documentadd_title'):
             </div>
 
             <div class="card-body">
                 <div class="control-group col-12">
-                    <label for="title_fr">Titre en français</label>
+                    <label for="title_fr">@lang('lang.document_item_titleinfrench')</label>
                     <input type="text" id="title_fr" name="title_fr" class="form-control">
                 </div>
 
                 <div class="control-group col-12">
-                    <label for="title_en">Titre en anglais</label>
+                    <label for="title_en">@lang('lang.document_item_titleinenglish')</label>
                     <input type="text" id="title_en" name="title_en" class="form-control">
                 </div>
 

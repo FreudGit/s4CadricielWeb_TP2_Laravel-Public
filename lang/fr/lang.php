@@ -47,6 +47,13 @@ return [
     'document_item_uploader' => 'Propriétaire',
     'document_item_actions' => 'Actions',
     'documentedit_title' => 'Editer le document',
+    'documentshow_title' => 'Informations',
+
+
+    'document_item_titleinenglish' => 'Titre en anglais',
+    'document_item_titleinfrench' => 'Titre en français',
+    'document_item_selectafile' => 'Sélectionner un fichier',
+
     'userlist_title' => 'Liste (détaillée) des usagers:',
 
     'etudiants_index_title' => 'Liste des étudiants',
@@ -81,6 +88,8 @@ return [
     'Delete' => 'Supprimer',
     'Close' => 'Fermer',
     'Areyousuredeletedata' => 'Voulez-vous vraiment effacer la donnée?',
+    'edit' => 'Éditer',
+
 
 
     'Nodataavailable' => 'Aucune donnée disponible',

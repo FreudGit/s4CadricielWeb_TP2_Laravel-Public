@@ -13,31 +13,33 @@ class DocumentController extends Controller
      */
     public function index()
     {
+        $documents = new Document;
+        $documents = $documents->documentSelect();
         //$documents = Document::all();
 
-          $documents = [
-        (object) [
-                'id' => 1,
-                'user_id' => 1,
+        // $documents = [
+        //     (object) [
+        //         'id' => 1,
+        //         'user_id' => 1,
 
-                'title_fr' => 'Document en français 1',
-            'title_en' => 'Document in English 1',
-            'created_at' => now()->subDays(1),
-            'user' => (object) ['name' => 'User 1']
-        ],
-        (object) [
-                'id' => 2,
-                'user_id' => 2,
+        //         'title_fr' => 'Document en français 1',
+        //         'title_en' => 'Document in English 1',
+        //         'created_at' => now()->subDays(1),
+        //         'user' => (object) ['name' => 'User 1']
+        //     ],
+        //     (object) [
+        //         'id' => 2,
+        //         'user_id' => 2,
 
-                'title_fr' => 'Document en français 2',
-            'title_en' => 'Document in English 2',
-            'created_at' => now()->subDays(2),
-            'user' => (object) ['name' => 'User 2']
-        ],
-        // ... vous pouvez ajouter plus de documents fictifs ici si nécessaire
-    ];
+        //         'title_fr' => 'Document en français 2',
+        //         'title_en' => 'Document in English 2',
+        //         'created_at' => now()->subDays(2),
+        //         'user' => (object) ['name' => 'User 2']
+        //     ],
+        //     // ... vous pouvez ajouter plus de documents fictifs ici si nécessaire
+        // ];
 
-  
+
 
 
         return view('document.index', ['documents' => $documents]);
@@ -73,27 +75,28 @@ class DocumentController extends Controller
         $document->title_fr = $request->title_fr;
         $document->title_en = $request->title_en;
         $document->file_path = $filePath;
-        $document->user_id = Auth::id(); 
-        //$document->save();
+        $document->user_id = Auth::id();
+        $document->save();
 
-       // return redirect()->route('some.route.name')->with('success', 'Document uploaded successfully!');
+        //return redirect()->route('document.index')->with('success', 'Document uploaded successfully!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Document $dowcument)
+    public function show(Document $document)
     {
-        //return $document;
-        $document= (object) [
-            'id' => 1,
-            'user_id' => 1,
+        //return 'show';
+        // return $document;
+        // $document = (object) [
+        //     'id' => 1,
+        //     'user_id' => 1,
 
-            'title_fr' => 'Document en français 1',
-            'title_en' => 'Document in English 1',
-            'created_at' => now()->subDays(1),
-            'user' => (object) ['name' => 'User 1']
-        ];
+        //     'title_fr' => 'Document en français 1',
+        //     'title_en' => 'Document in English 1',
+        //     'created_at' => now()->subDays(1),
+        //     'user' => (object) ['name' => 'User 1']
+        // ];
         return view('document.show', ['document' => $document]);
     }
 
@@ -102,6 +105,8 @@ class DocumentController extends Controller
      */
     public function edit($id)
     {
+        //return 'edit';
+
         $document = Document::findOrFail($id);
 
         // Vérifier que l'utilisateur actuellement connecté est le propriétaire du document
@@ -109,7 +114,8 @@ class DocumentController extends Controller
             return redirect()->back()->with('error', 'Unauthorized access.');
         }
 
-        return view('path.to.your.edit.blade.file', ['document' => $document]);
+        return view('document.edit', ['document' => $document]);
+
     }
 
     /**
@@ -117,7 +123,12 @@ class DocumentController extends Controller
      */
     public function update(Request $request, Document $document)
     {
-        //
+        $document->update([
+            'title_fr' => $request->title_fr,
+            'title_en' => $request->title_en,
+        ]);
+        return redirect(route('document.show', $document->id))->withSuccess('Donnée mise à jour');
+        ;
     }
 
     /**
