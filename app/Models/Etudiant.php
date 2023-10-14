@@ -19,4 +19,15 @@ class Etudiant extends Model
 
     }
 
+    /**
+     * Get the user associated with the etudiant.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
+    
+
 }

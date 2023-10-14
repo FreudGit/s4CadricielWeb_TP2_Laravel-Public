@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateEtudiantsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,8 +19,11 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->date('date_de_naissance');
             $table->unsignedBigInteger('ville_id');
-            $table->foreign('ville_id')->references('id')->on('villes');
+            $table->unsignedBigInteger('user_id')->unique(); // La colonne pour la relation avec la table `users`
             $table->timestamps();
+
+            $table->foreign('ville_id')->references('id')->on('villes')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -31,4 +34,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('etudiants');
     }
-};
+}

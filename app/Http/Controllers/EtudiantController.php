@@ -13,13 +13,6 @@ class EtudiantController extends Controller
     public function index()
     {
         $etudiants = Etudiant::orderBy('updated_at', 'DESC')->paginate(10);
-
-        // Autre approches (fonctionelles) pour ajouter la ville à l'objet étudiant (non utilisée, pour documentation seulement)
-        // foreach ($etudiants as $etudiant) {
-        //     $etudiant->ville= $this->getVilleFromID($etudiant->ville_id);
-        // OU:
-        //     $etudiant->villeb= $etudiant->etudiantHasVille->nom;
-        // }
         return view('etudiant.index', ['etudiants' => $etudiants]);
     }
 
@@ -37,6 +30,14 @@ class EtudiantController extends Controller
      */
     public function store(Request $request)
     {
+
+        $validatedData = $request->validate([
+            'nom' => 'required|string|max:255',
+            'date_de_naissance' => 'required|date',
+            'adresse' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:15',
+        ]);
         $newEtudiant = Etudiant::create([
             'nom' => $request->nom,
             'date_de_naissance' => $request->date_de_naissance,
@@ -72,6 +73,13 @@ class EtudiantController extends Controller
      */
     public function update(Request $request, Etudiant $etudiant)
     {
+        $validatedData = $request->validate([
+            'nom' => 'required|string|max:255',
+            'date_de_naissance' => 'required|date',
+            'adresse' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:15',
+        ]);
         $etudiant->update([
             'nom' => $request->nom,
             'date_de_naissance' => $request->date_de_naissance,
@@ -81,7 +89,7 @@ class EtudiantController extends Controller
             'ville_id' => $request->ville_id
             
         ]);
-        return redirect(route('etudiant.show', $etudiant->id))->withSuccess('Donnée mise à jour');
+        return redirect(route('etudiant.show', $etudiant->id))->withSuccess(trans('lang.Dataupdated'));
     }
 
     /**
@@ -90,7 +98,7 @@ class EtudiantController extends Controller
     public function destroy(Etudiant $etudiant)
     {
         $etudiant->delete();
-        return redirect(route('etudiant.index'))->withSuccess('Donnée effacée');
+        return redirect(route('etudiant.index'))->withSuccess(trans('lang.Datadeleted'));
     }
 
 

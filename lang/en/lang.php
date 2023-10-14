@@ -45,7 +45,7 @@ return [
 
 
     //Documents
-     'documentadd_title' => 'Add article',
+     'documentadd_title' => 'Add Document',
     'documents_title' => 'Lists of documents',
     'document_item_title'=> 'Title',
     'document_item_dateadded'=> 'Date added',
@@ -81,7 +81,6 @@ return [
     'back' => 'Back',
     'lastupdate' => 'Last update:',
     'save' => 'Save',
-    'documentadd_title' => 'Add document',
     'documentedit_title' => 'Edit document',
 
     'view' => 'View',
@@ -92,6 +91,10 @@ return [
     'Nodataavailable' => 'No data available',
     'Login' => 'Login',
     'edit' => 'Edit',
+    'createdby' => 'Created by',
+    'Studentname' => 'Student name',
+    'Datadeleted' => 'Data deleted',
+'Documentuploadedsuccessfully' => 'Document uploaded successfully!',
 
     'telephone' => 'Phone',
     'address' => 'Address',
@@ -101,6 +104,8 @@ return [
     'Delete' => 'Delete',
     'Close' => 'Close',
     'Areyousuredeletedata' => 'Are you sure you want to delete the data?',
+    'Dataupdated' => 'Data updated',
+    'Unauthorizedaccess' => 'Unauthorized access'
 
 
 

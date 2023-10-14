@@ -1,37 +1,59 @@
 @extends('layouts.layout')
 @section('title', trans('lang.blog_title'))
 @section('content')
-<hr>
-<div class="row">
-    <div class="col-12 pt-2">
-        <a href="{{ route('blog.index') }}" class="btn btn-outline-primary btn-sm">@lang('lang.back')
-</a>
-        <h4 class="display-4 mt-5">
-            {{ $blogPost->title }}
-        </h4>
-        <hr>
-        <p>
-            {!! $blogPost->body !!}
-        </p>
-        <p>
-            <strong>Author: </strong> {{ $blogPost->blogHasUser->name }}
-        </p>
+
+
+
+<div>
+    <a href="{{ route('blog.index') }}" class="btn btn-outline-primary btn-sm btn-dark">@lang('lang.back')
+    </a>
+</div>
+
+<div class="row justify-content-center">
+
+    <div class="col-md-6">
+        <div class="card">
+            <form method="post">
+                @method('PUT')
+                @csrf
+                <div class="card-header">
+                    Formulaire
+                </div>
+                <div class="card-body">
+                    <h4 class="display-4 mt-5">
+                        {{ $blogPost->title }}
+                    </h4>
+                    <hr>
+                    <p>
+                        {!! $blogPost->body !!}
+                    </p>
+                    <p>
+                        <strong>Author: </strong> {{ $blogPost->blogHasUser->name }}
+                    </p>
+                </div>
+                <div class="card-footer  d-flex justify-content-between align-items-center">
+                    <div >
+                        <a href="{{ route('blog.edit', $blogPost->id) }}"
+                            class="btn btn-primary btn-sm">@lang('lang.update')
+                        </a>
+                    </div>
+                    <div >
+
+                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#deleteModal">
+                            @lang('lang.delete')
+                        </button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-<hr>
-<div class="row mb-5">
-    <div class="col-6">
-        <a href="{{ route('blog.edit', $blogPost->id) }}" class="btn btn-primary">@lang('lang.update')
-</a>
-    </div>
-    <div class="col-6">
 
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
-            @lang('lang.delete')
-        </button>
 
-    </div>
-</div>
+
+
 
 <!-- Button trigger modal -->
 
@@ -45,10 +67,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Voulez-vous vraiment effacer la donnée? {{ $blogPost->title }}
+                @lang('lang.Areyousuredeletedata')  {{ $blogPost->title }}
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Close</button>
                 <form action="{{ route('blog.delete', $blogPost->id) }}" method="post">
                     @method('DELETE')
                     @csrf

@@ -23,16 +23,13 @@ class Document extends Model
     static public function documentSelect()
     {
        // $lang = session()->get('localeDB', 'en'); // 'en' as default language
-        $lang = session()->get('locale');
-
-
+        $lang = session()->get('locale', 'en');
 
         return self::select(
             '*',
             DB::raw("CASE WHEN title_$lang IS NULL THEN title_en ELSE title_$lang END as title")
         )
-            ->orderBy('title')
-            ->get();
+            ->orderBy('title');
     }
 
     /**
@@ -43,24 +40,23 @@ class Document extends Model
         return $this->belongsTo(User::class);
     }
 
-    /**
-     * Determine if the given user can delete the document.
-     *
-     * @param  \App\Models\User  $user
-     * @return bool
-     */
-    public function canBeDeletedBy(User $user)
+    public function etudiant()
     {
-        return $this->user_id == $user->id;
+        //return 'bobo';
+        return $this->hasOne(Etudiant::class, 'user_id', 'user_id');
     }
-
     /**
      * Determine if the given user can update the document.
      *
      * @param  \App\Models\User  $user
      * @return bool
      */
-    public function canBeUpdatedBy(User $user)
+    public function canBeUpdatedBy($id)
+    {
+        return $this->user_id == $id;
+    }
+
+    public function canBeDeletedBy(User $user)
     {
         return $this->user_id == $user->id;
     }

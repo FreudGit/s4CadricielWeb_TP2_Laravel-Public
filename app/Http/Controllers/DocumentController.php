@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Document;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 use Auth;
 
 class DocumentController extends Controller
@@ -13,37 +15,8 @@ class DocumentController extends Controller
      */
     public function index()
     {
-        $documents = new Document;
-        $documents = $documents->documentSelect();
-        //$documents = Document::all();
-
-        // $documents = [
-        //     (object) [
-        //         'id' => 1,
-        //         'user_id' => 1,
-
-        //         'title_fr' => 'Document en français 1',
-        //         'title_en' => 'Document in English 1',
-        //         'created_at' => now()->subDays(1),
-        //         'user' => (object) ['name' => 'User 1']
-        //     ],
-        //     (object) [
-        //         'id' => 2,
-        //         'user_id' => 2,
-
-        //         'title_fr' => 'Document en français 2',
-        //         'title_en' => 'Document in English 2',
-        //         'created_at' => now()->subDays(2),
-        //         'user' => (object) ['name' => 'User 2']
-        //     ],
-        //     // ... vous pouvez ajouter plus de documents fictifs ici si nécessaire
-        // ];
-
-
-
-
+        $documents = Document::documentSelect()->paginate(1);
         return view('document.index', ['documents' => $documents]);
-
     }
 
     /**
@@ -52,7 +25,6 @@ class DocumentController extends Controller
     public function create()
     {
         return view('document.create');
-
     }
 
     /**
@@ -63,8 +35,7 @@ class DocumentController extends Controller
         $request->validate([
             'title_fr' => 'required|string|max:255',
             'title_en' => 'required|string|max:255',
-            'document' => 'required|mimes:pdf,zip,doc|max:2048',
-            // Limite à 2MB pour l'exemple
+            'document' => 'required|mimes:pdf,zip,doc',
         ]);
 
         // Upload du fichier
@@ -78,7 +49,7 @@ class DocumentController extends Controller
         $document->user_id = Auth::id();
         $document->save();
 
-        //return redirect()->route('document.index')->with('success', 'Document uploaded successfully!');
+        return redirect()->route('document.index')->with('success', trans('lang.Documentuploadedsuccessfully'));
     }
 
     /**
@@ -86,17 +57,6 @@ class DocumentController extends Controller
      */
     public function show(Document $document)
     {
-        //return 'show';
-        // return $document;
-        // $document = (object) [
-        //     'id' => 1,
-        //     'user_id' => 1,
-
-        //     'title_fr' => 'Document en français 1',
-        //     'title_en' => 'Document in English 1',
-        //     'created_at' => now()->subDays(1),
-        //     'user' => (object) ['name' => 'User 1']
-        // ];
         return view('document.show', ['document' => $document]);
     }
 
@@ -105,17 +65,13 @@ class DocumentController extends Controller
      */
     public function edit($id)
     {
-        //return 'edit';
+
 
         $document = Document::findOrFail($id);
-
-        // Vérifier que l'utilisateur actuellement connecté est le propriétaire du document
         if (Auth::id() !== $document->user_id) {
             return redirect()->back()->with('error', 'Unauthorized access.');
         }
-
         return view('document.edit', ['document' => $document]);
-
     }
 
     /**
@@ -123,11 +79,15 @@ class DocumentController extends Controller
      */
     public function update(Request $request, Document $document)
     {
+        $request->validate([
+            'title_fr' => 'required|string|max:255',
+            'title_en' => 'required|string|max:255'
+        ]);
         $document->update([
             'title_fr' => $request->title_fr,
             'title_en' => $request->title_en,
         ]);
-        return redirect(route('document.show', $document->id))->withSuccess('Donnée mise à jour');
+        return redirect(route('document.show', $document->id))->withSuccess(trans('lang.Dataupdated'));
         ;
     }
 
@@ -139,7 +99,7 @@ class DocumentController extends Controller
         $document = Document::findOrFail($id);
 
         if (Auth::id() !== $document->user_id) {
-            return redirect()->back()->with('error', 'Unauthorized access.');
+            return redirect()->back()->with('error', trans('lang.Unauthorizedaccess'));
         }
 
         // Supprimer le fichier du stockage
@@ -148,7 +108,7 @@ class DocumentController extends Controller
         // Supprimer l'entrée de la base de données
         $document->delete();
 
-        return redirect()->back()->with('success', 'Document deleted successfully.');
+        return redirect(route('document.index'))->withSuccess(trans('lang.Datadeleted'));
     }
 
     public function download(Document $document)
@@ -156,10 +116,18 @@ class DocumentController extends Controller
         // Ensure the user is authorized to download the file
         // You may define your own logic here.
         if (Auth::id() !== $document->user_id) {
-            return redirect()->back()->with('error', 'Unauthorized access.');
+            return redirect()->back()->with('error', trans('lang.Unauthorizedaccess'));
         }
 
         return response()->download(storage_path("app/{$document->file_path}"));
     }
 
+
+
+    public function page()
+    {
+        $documents = Document::Select()
+            ->paginate(1);
+        return view('document.page', ['documents' => $documents]);
+    }
 }

@@ -24,15 +24,17 @@
                             <th>@lang('lang.document_item_title')</th>
                             <th>@lang('lang.document_item_dateadded')</th>
                             <th>
-                                @lang('lang.document_item_uploader')</th>
+                                @lang('lang.Studentname')</th>
                             <th>@lang('lang.document_item_actions')</th>
                         </tr>
                         </thead>
-                        <tbody> @foreach($documents as $document) <tr>
+                        <tbody> 
+                            @foreach($documents as $document) <tr>
                                 <td>{{ $document->title }}
                                 </td>
                                 <td>{{ $document->created_at->format('d-m-Y') }}</td>
-                                <td>{{ $document->user->name }}</td>
+                                <td>{{ $document->etudiant->nom ?? $document->user->name }}</td>
+
                                 <td>
                                     <a href="{{ route('document.show', $document->id) }}"
                                         class="btn btn-info btn-sm">
@@ -40,7 +42,7 @@
                                             <a href="{{ route('documents.download', $document->id) }}"
                                                 class="btn btn-secondary btn-sm">
                                                 @lang('lang.download') </a>
-                                                    @if(auth()->id() === $document->user_id)
+                                                    @if($document->canBeUpdatedBy(auth()->id()))
                                                         <a href="{{ route('document.edit', $document->id) }}"
                                                             class="btn btn-primary btn-sm">
                                                             @lang('lang.edit') </a>
@@ -51,6 +53,9 @@
                         </tbody>
                 </table>
             </div>
+           
         </div>
+        {{ $documents }}
     </div>
-</div> @endsection
+</div>
+ @endsection

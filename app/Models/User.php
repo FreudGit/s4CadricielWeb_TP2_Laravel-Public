@@ -47,4 +47,12 @@ class User extends Authenticatable
      {
      return $this->hasMany(BlogPost::class);
      }
+
+    /**
+     * Get the etudiant associated with the user.
+     */
+    public function etudiant()
+    {
+        return $this->hasOne(Etudiant::class);
+    }
 }

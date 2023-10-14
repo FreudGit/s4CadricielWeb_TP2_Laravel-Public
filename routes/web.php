@@ -69,6 +69,8 @@ Route::get('/document/{document}', [DocumentController::class, 'show'])->name('d
 
 Route::get('/document-edit/{document}', [DocumentController::class, 'edit'])->name('document.edit');
 Route::put('/document-edit/{document}', [DocumentController::class, 'update']);
+Route::delete('/document-edit/{document}', [DocumentController::class, 'destroy'])->name('document.delete');
+;
 
 Route::get('documents/{document}/download', [DocumentController::class, 'download'])
     ->name('documents.download');

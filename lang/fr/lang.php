@@ -40,7 +40,6 @@ return [
     'blogs_title' => 'Liste de blogs',
 
     //Documents
-    'documentadd_title' => 'Ajouter article',
     'documents_title' => 'Liste de documents',
     'document_item_title' => 'Titre',
     'document_item_dateadded' => "Date d'ajout",
@@ -89,6 +88,14 @@ return [
     'Close' => 'Fermer',
     'Areyousuredeletedata' => 'Voulez-vous vraiment effacer la donnée?',
     'edit' => 'Éditer',
+    'createdby' => 'Créé par',
+    'Dataupdated' => 'Donnée mise à jour',
+    'Unauthorizedaccess' => 'Accès non autorisé',
+    'Studentname' => 'Nom de l\'étudiant',
+    'Datadeleted' => 'Donnée effacée',
+    'Documentuploadedsuccessfully' => 'Document ajouté avec succès!',
+
+
 
 
 

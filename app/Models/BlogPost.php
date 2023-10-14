@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Etudiant;
 
 class BlogPost extends Model
 {
@@ -22,6 +23,14 @@ class BlogPost extends Model
 
     }
 
-  
+
+    public function etudiant()
+    {
+        //return 'bobo';
+        return $this->hasOne(Etudiant::class, 'user_id', 'user_id');
+    }
+
+
+
 
 }

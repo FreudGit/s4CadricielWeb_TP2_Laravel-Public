@@ -19,7 +19,6 @@
             @method('PUT')
             @csrf
             <div class="card">
-
                 <div class="card-header">
                     <div class="float-start">
                         <h4>@lang('lang.etudiant_add_form_title')</h4>
@@ -30,8 +29,8 @@
                             @lang('lang.Delete')
                         </button>
                     </div>
-
                 </div>
+                
                 <div class="card-body">
                     <div class="control-grup col-12">
                         <label for="nom">@lang('lang.name')</label>

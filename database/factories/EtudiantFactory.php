@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 use App\Models\Ville;
+use App\Models\User;
+
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -21,13 +23,21 @@ class EtudiantFactory extends Factory
         $villeIds = Ville::pluck('id')->toArray();
         $randomVilleId = $this->faker->randomElement($villeIds);
 
-    return [
-        'nom' => $this->faker->firstName . ' ' . $this->faker->lastName,
-        'adresse' => $this->faker->address,
-        'phone' => $this->faker->phoneNumber,
-        'email' => $this->faker->unique()->safeEmail,
-        'date_de_naissance' => $this->faker->date($format = 'Y-m-d', $max = '2003-12-31'),
-        'ville_id' => $randomVilleId,
-    ];
+        // Récupérer tous les IDs utilisateur qui ne sont pas encore associés à un étudiant
+        $userIdsWithoutEtudiant = User::whereNotExists(function ($query) {
+            $query->select('*')->from('etudiants')
+                ->whereColumn('etudiants.user_id', 'users.id');
+        })->pluck('id')->toArray();
+        $randomUserId = $this->faker->randomElement($userIdsWithoutEtudiant);
+
+        return [
+            'nom' => $this->faker->firstName . ' ' . $this->faker->lastName,
+            'adresse' => $this->faker->address,
+            'phone' => $this->faker->phoneNumber,
+            'email' => $this->faker->unique()->safeEmail,
+            'date_de_naissance' => $this->faker->date($format = 'Y-m-d', $max = '2003-12-31'),
+            'ville_id' => $randomVilleId,
+            'user_id' => $randomUserId,
+        ];
     }
 }

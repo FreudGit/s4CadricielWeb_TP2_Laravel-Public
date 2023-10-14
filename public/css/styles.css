@@ -15,3 +15,7 @@ body .transparent-background {
         0.5
     ); /* Adjust the last value (alpha) for opacity (0.5 = 50%) */
 }
+
+body .white-background {
+    background-color:white; /* Adjust the last value (alpha) for opacity (0.5 = 50%) */
+}

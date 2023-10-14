@@ -4,18 +4,20 @@
 
 
 <hr>
-<div class="row mt-3  ">
+<div class="row mt-3 ">
     <div class="col-12">
-        <div class="card  transparent-background">
-            <div class="card-header transparent-background ">
+        <div class="card transparent-background">
+            <div class="card-header
+        transparent-background ">
                 <div class="float-start">
                     <h4>@lang('lang.blogs_title')</h4>
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('blog.create') }}" class="btn btn-dark ml-auto">@lang('lang.btn_add')</a>
+                    <a href="{{ route('blog.create') }}"
+                        class="btn btn-dark ml-auto">@lang('lang.btn_add')</a>
                 </div>
             </div>
-            <div class="card-body transparent-background ">
+            <div class="card-body ">
                 <ul>
                     @forelse($posts as $post)
                         <div class="card mb-2">
@@ -23,25 +25,31 @@
                                 {{ $post->title }}
 
                             </div>
-                            <div class="card-body  text-left">
+                            <div class="card-body text-left">
                                 <p class="card-text text-left text-lg text-muted">
-                                        {{ Str::limit($post->body, $limit = 200, $end = '...') }}
+                                    {{ Str::limit($post->body, $limit = 200, $end = '...') }}
 
-</p>
+                                </p>
                             </div>
                             <div class="card-footer d-flex justify-content-between align-items-center">
                                 <div>
-                                    <small class="text-body-secondary">@lang('lang.lastupdate')
-                                        {{ $post->updated_at }}</small>
+                                    <small class="text-body-secondary">@lang('lang.createdby') 
+                                    {{ $post->etudiant->nom ?? '' }} (@lang('lang.lastupdate')
+                                        {{ $post->updated_at }})</small>
                                 </div>
                                 <div>
+                                   
+
+                                   
                                     <a href="{{ route('blog.show', $post->id) }}"
                                         class="btn btn-primary btn-sm">Infos</a>
-@if(Auth::check() && Auth::user()->id == $post->user_id)
+                                        
+                                    @if(Auth::check()
+                                        && Auth::user()->id == $post->user_id )
 
-                                    <a href="{{ route('blog.edit', $post->id) }}"
-                                        class="btn btn-outline-secondary btn-sm">@lang('lang.btn_edit')</a>
-@endif
+                                        <a href="{{ route('blog.edit', $post->id) }}"
+                                            class="btn btn-outline-secondary btn-sm">@lang('lang.btn_edit')</a>
+                                    @endif
 
                                 </div>
                             </div>
