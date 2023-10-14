@@ -44,17 +44,17 @@ Route::post('/registration', [CustomAuthController::class, 'store']);
 Route::get('/login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('/login', [CustomAuthController::class, 'authentification'])->name('login');
 Route::get('/logout', [CustomAuthController::class, 'logout'])->name('logout');
-Route::get('/user-list', [CustomAuthController::class, 'userList'])->name('user.list');
+Route::get('/user-list', [CustomAuthController::class, 'userList'])->name('user.list')->middleware('auth');
 
 
 Route::get('/blog', [BlogPostController::class, 'index'])->name('blog.index')->middleware('auth');
-Route::get('/blog/{blogPost}', [BlogPostController::class, 'show'])->name('blog.show');
+Route::get('/blog/{blogPost}', [BlogPostController::class, 'show'])->name('blog.show')->middleware('auth');
 
-Route::get('/blog-create', [BlogPostController::class, 'create'])->name('blog.create')->middleware('auth');
-Route::post('/blog-create', [BlogPostController::class, 'store']);
-Route::get('/blog-edit/{blogPost}', [BlogPostController::class, 'edit'])->name('blog.edit');
-Route::put('/blog-edit/{blogPost}', [BlogPostController::class, 'update']);
-Route::delete('/blog-edit/{blogPost}', [BlogPostController::class, 'destroy'])->name('blog.delete');
+Route::get('/blog-create', [BlogPostController::class, 'create'])->name('blog.create')->middleware('auth')->middleware('auth');
+Route::post('/blog-create', [BlogPostController::class, 'store'])->middleware('auth');
+Route::get('/blog-edit/{blogPost}', [BlogPostController::class, 'edit'])->name('blog.edit')->middleware('auth');
+Route::put('/blog-edit/{blogPost}', [BlogPostController::class, 'update'])->middleware('auth');
+Route::delete('/blog-edit/{blogPost}', [BlogPostController::class, 'destroy'])->name('blog.delete')->middleware('auth');
 ;
 // Route::get('/query', [BlogPostController::class, 'query' ]);
 
@@ -64,12 +64,12 @@ Route::get('/lang/{locale}', [LocalizationController::class, 'index'])->name('la
 Route::get('/document-create', [DocumentController::class, 'create'])->name('document.create')->middleware('auth');
 Route::post('/document-create', [DocumentController::class, 'store']);
 Route::get('/document', [DocumentController::class, 'index'])->name('document.index')->middleware('auth');
-Route::get('/document/{document}', [DocumentController::class, 'show'])->name('document.show');
+Route::get('/document/{document}', [DocumentController::class, 'show'])->name('document.show')->middleware('auth');
 
 
-Route::get('/document-edit/{document}', [DocumentController::class, 'edit'])->name('document.edit');
-Route::put('/document-edit/{document}', [DocumentController::class, 'update']);
-Route::delete('/document-edit/{document}', [DocumentController::class, 'destroy'])->name('document.delete');
+Route::get('/document-edit/{document}', [DocumentController::class, 'edit'])->name('document.edit')->middleware('auth');
+Route::put('/document-edit/{document}', [DocumentController::class, 'update'])->middleware('auth');
+Route::delete('/document-edit/{document}', [DocumentController::class, 'destroy'])->name('document.delete')->middleware('auth');
 ;
 
 Route::get('documents/{document}/download', [DocumentController::class, 'download'])

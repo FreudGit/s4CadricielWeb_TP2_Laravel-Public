@@ -12,8 +12,10 @@ return new class extends Migration {
     {
         Schema::create('blog_posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 100);
-            $table->text('body');
+            $table->string('title_en', 100);
+            $table->text('body_en');
+            $table->string('title_fr', 100);
+            $table->text('body_fr');
             $table->integer('user_id');
             $table->timestamps();
         });

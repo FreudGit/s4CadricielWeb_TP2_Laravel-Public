@@ -15,8 +15,10 @@ class BlogPostFactory extends Factory
     public function definition()
     {
         return [
-            'title'=> $this->faker->sentence,
-            'body'=> $this->faker->paragraph(30),
+            'title_en'=> $this->faker->sentence,
+            'body_en'=> $this->faker->paragraph(30),
+            'title_fr' => $this->faker->sentence,
+            'body_fr' => $this->faker->paragraph(30),
             'user_id'=> User::factory(),
         ];
     }

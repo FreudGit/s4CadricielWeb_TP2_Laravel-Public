@@ -1,11 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Document;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-
 use Auth;
 
 class DocumentController extends Controller
@@ -65,8 +63,6 @@ class DocumentController extends Controller
      */
     public function edit($id)
     {
-
-
         $document = Document::findOrFail($id);
         if (Auth::id() !== $document->user_id) {
             return redirect()->back()->with('error', 'Unauthorized access.');
@@ -122,12 +118,4 @@ class DocumentController extends Controller
         return response()->download(storage_path("app/{$document->file_path}"));
     }
 
-
-
-    public function page()
-    {
-        $documents = Document::Select()
-            ->paginate(1);
-        return view('document.page', ['documents' => $documents]);
-    }
 }

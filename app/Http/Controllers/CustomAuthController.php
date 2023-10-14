@@ -106,8 +106,6 @@ class CustomAuthController extends Controller
 
         $credentials = $request->only('email', 'password');
 
-        //return $credentials;
-
         if(!Auth::validate($credentials)):
             return redirect(route('login'))
                         ->withErrors(trans('auth.password'))

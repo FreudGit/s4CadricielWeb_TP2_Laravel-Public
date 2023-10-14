@@ -45,7 +45,7 @@ class User extends Authenticatable
 
      public function userHasPosts()
      {
-     return $this->hasMany(BlogPost::class);
+        return $this->hasMany(BlogPost::class)->withDefaultLocale()->orderBy('title');
      }
 
     /**

@@ -25,7 +25,10 @@ return [
     'nav_documents' => 'Documents',
     'nav_Logout' => 'Se déconnecter',
     'Login' => 'Connection',
-
+    'French' => 'Français',
+    'English' => 'Anglais',
+    'Title' => 'Titre',
+    'Body' => 'Contenu',
     'login_name' => 'Nom',
     'login_title' => 'Connecter',
     'login_email' => 'Courriel',
@@ -63,6 +66,11 @@ return [
     'etudiant_edit_title' => 'Éditer un étudiant',
     'etudiant_add_title' => 'Ajouter un étudiant',
 
+    'blog_edit_title' => 'Éditer un article',
+    'blog_create_title' => 'Créer un article',
+    'blog_show_title' => 'Voir l\'article',
+    'blog_add_title' => 'Ajouter un article',
+
 
     'name' => 'Nom',
     'email' => 'Courriel',
@@ -81,6 +89,7 @@ return [
     'city' => 'Ville',
     'birthdate' => 'Date de naissance',
     'nocityavailable' => 'Aucune ville disponible',
+    'Itemadded' => 'Élément ajouté',
 
 
     'Choosecity' => 'Choisir une ville',

@@ -18,14 +18,9 @@ class BlogPostController extends Controller
      */
     public function index()
     {
-        $posts = BlogPost::all();
+
+        $posts = BlogPost::blogPostSelect()->paginate(40);
         return view('blog.index', ['posts' => $posts]);
-        // if (Auth::check()) {
-        //     $posts = BlogPost::all();
-        //     return view('blog.index', ['posts' => $posts]);
-        // }else{
-        //     return redirect(route('login'))->withSuccess('Vous devez vous connecter');
-        // }
     }
 
     /**
@@ -48,16 +43,20 @@ class BlogPostController extends Controller
     {
 
         $validatedData = $request->validate([
-            'title' => 'required|string|max:255',
-            'body' => 'required|string',
+            'title_en' => 'required|string|max:255',
+            'body_en' => 'required|string',
+            'title_fr' => 'required|string|max:255',
+            'body_fr' => 'required|string',
         ]);
         $newPost = BlogPost::create([
-            'title' => $request->title,
-            'body' => $request->body,
+            'title_en' => $request->title_en,
+            'body_en' => $request->body_en,
+            'title_fr' => $request->title_fr,
+            'body_fr' => $request->body_fr,
             'user_id' => Auth::user()->id
 
         ]);
-        return redirect(route('blog.index'))->withSuccess(trans('lang.Datadeleted'));
+        return redirect(route('blog.index'))->withSuccess(trans('lang.Itemadded'));
     }
 
     /**
@@ -92,12 +91,16 @@ class BlogPostController extends Controller
     public function update(Request $request, BlogPost $blogPost)
     {
         $validatedData = $request->validate([
-            'title' => 'required|string|max:255',
-            'body' => 'required|string',
+            'title_en' => 'required|string|max:255',
+            'body_en' => 'required|string',
+            'title_fr' => 'required|string|max:255',
+            'body_fr' => 'required|string',
         ]);
         $blogPost->update([
-            'title' => $request->title,
-            'body' => $request->body
+            'title_en' => $request->title_en,
+            'body_en' => $request->body_en,
+            'title_fr' => $request->title_fr,
+            'body_fr' => $request->body_fr,
         ]);
         return redirect(route('blog.show', $blogPost->id))->withSuccess(trans('lang.Dataupdated'));
     }

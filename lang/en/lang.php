@@ -82,6 +82,17 @@ return [
     'lastupdate' => 'Last update:',
     'save' => 'Save',
     'documentedit_title' => 'Edit document',
+    'French' => 'French',
+    'English' => 'English',
+    'Title' => 'Title',
+    'Body' => 'Body',
+    'blog_edit_title' => 'Edit article',
+    'blog_create_title' => 'Create article',
+    'blog_show_title' => 'View article',
+    'blog_add_title' => 'Add article',
+    'Itemadded' => 'Item added',
+
+
 
     'view' => 'View',
     'viewMore' => 'View more...',
