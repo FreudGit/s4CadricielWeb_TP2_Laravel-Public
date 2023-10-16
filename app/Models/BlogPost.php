@@ -9,9 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class BlogPost extends Model
 {
-    
     use HasFactory;
-
     //protected primaryKey='id'; // si on veux changer primary key
     //protected table='blogposts'; // si on veux changer le nom de la table
     //protected timestamps=false; // si on veux pas de timestamps
@@ -21,13 +19,11 @@ class BlogPost extends Model
     public function blogHasUser()
     {
         return $this->hasOne('App\Models\User', 'id', 'user_id');
-
     }
 
 
     public function etudiant()
     {
-        //return 'bobo';
         return $this->hasOne(Etudiant::class, 'user_id', 'user_id');
     }
 
@@ -46,7 +42,6 @@ class BlogPost extends Model
     public function scopeWithDefaultLocale($query)
     {
         $lang = session()->get('locale', 'en');
-
         return $query->select(
             '*',
             DB::raw("CASE WHEN title_$lang IS NULL THEN title_en ELSE title_$lang END as title"),

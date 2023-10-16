@@ -13,7 +13,7 @@ class DocumentController extends Controller
      */
     public function index()
     {
-        $documents = Document::documentSelect()->paginate(1);
+        $documents = Document::documentSelect()->paginate(3);
         return view('document.index', ['documents' => $documents]);
     }
 

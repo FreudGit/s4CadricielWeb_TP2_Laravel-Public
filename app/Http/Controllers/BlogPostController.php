@@ -18,7 +18,6 @@ class BlogPostController extends Controller
      */
     public function index()
     {
-
         $posts = BlogPost::blogPostSelect()->paginate(40);
         return view('blog.index', ['posts' => $posts]);
     }

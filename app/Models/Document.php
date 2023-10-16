@@ -22,9 +22,7 @@ class Document extends Model
 
     static public function documentSelect()
     {
-       // $lang = session()->get('localeDB', 'en'); // 'en' as default language
         $lang = session()->get('locale', 'en');
-
         return self::select(
             '*',
             DB::raw("CASE WHEN title_$lang IS NULL THEN title_en ELSE title_$lang END as title")
@@ -42,7 +40,6 @@ class Document extends Model
 
     public function etudiant()
     {
-        //return 'bobo';
         return $this->hasOne(Etudiant::class, 'user_id', 'user_id');
     }
     /**

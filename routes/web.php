@@ -25,16 +25,16 @@ Route::get('/', function () {
 ;
 
 
-Route::get('/index', [EtudiantController::class, 'index'])->name('etudiant.index');
+Route::get('/index', [EtudiantController::class, 'index'])->name('etudiant.index')->middleware('auth');
 
 
 // Route::get( '/blog', [EtudiantController::class, 'index'])->name('blog.index');
 Route::get('/etudiant/{etudiant}', [EtudiantController::class, 'show'])->name('etudiant.show');
 Route::get('/etudiant-create', [EtudiantController::class, 'create'])->name('etudiant.create');
 Route::post('/etudiant-create', [EtudiantController::class, 'store']);
-Route::get('/etudiant-edit/{etudiant}', [EtudiantController::class, 'edit'])->name('etudiant.edit');
-Route::put('/etudiant-edit/{etudiant}', [EtudiantController::class, 'update']);
-Route::delete('/etudiant-edit/{etudiant}', [EtudiantController::class, 'destroy'])->name('etudiant.delete');
+Route::get('/etudiant-edit/{etudiant}', [EtudiantController::class, 'edit'])->name('etudiant.edit')->middleware('auth');
+Route::put('/etudiant-edit/{etudiant}', [EtudiantController::class, 'update'])->middleware('auth');
+Route::delete('/etudiant-edit/{etudiant}', [EtudiantController::class, 'destroy'])->name('etudiant.delete')->middleware('auth');
 ;
 
 
