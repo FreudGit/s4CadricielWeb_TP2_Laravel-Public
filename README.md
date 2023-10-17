@@ -12,7 +12,11 @@ par:  François Hébert (e2296133)
 RÉFÉRENCES:
 
 - LIEN VERS LE GITHUB: **[GIT DU PROJET](https://github.com/fhmaisonneuve/s4CadricielWeb_TP2_Laravel)**
-- LIEN VERS LE PROJET(WEBDEV): A NOTER QUE LA VERSION NE FONCTIONNE PAS CORRECTEMENT, vous m'avez corrigé le travail directement.  **[https://e2296133.webdev.cmaisonneuve.qc.ca/cadricieltp2v2COPY/](https://e2296133.webdev.cmaisonneuve.qc.ca/cadricieltp2v2COPY/)** 
+- LIEN VERS LE PROJET(WEBDEV):
+  
+
+   - A NOTER QUE LA VERSION NE FONCTIONNE PAS CORRECTEMENT due a php7, vous m'avez corrigé le travail directement. 
+     -  **[https://e2296133.webdev.cmaisonneuve.qc.ca/cadricieltp2v2COPY/](https://e2296133.webdev.cmaisonneuve.qc.ca/cadricieltp2v2COPY/)** 
 
 USER:
 - User: francois@francois.com
