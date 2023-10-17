@@ -11,7 +11,8 @@ par:  François Hébert (e2296133)
 
 RÉFÉRENCES:
 
-- LIEN VERS LE GITHUB: **[GIT DU PROJET](https://github.com/fhmaisonneuve/s4CadricielWeb_TP2_Laravel)**
+- LIEN VERS LE GITHUB: **[GIT DU PROJET](https://github.com/fhmaisonneuve/s4CadricielWeb_TP2_Laravel-Public
+)**
 - LIEN VERS LE PROJET(WEBDEV):
   
 
