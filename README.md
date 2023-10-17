@@ -12,7 +12,7 @@ par:  François Hébert (e2296133)
 RÉFÉRENCES:
 
 - LIEN VERS LE GITHUB: **[GIT DU PROJET](https://github.com/fhmaisonneuve/s4CadricielWeb_TP2_Laravel)**
-- LIEN VERS LE PROJET(WEBDEV): **[https://e2296133.webdev.cmaisonneuve.qc.ca/cadricielwebtp2/](https://e2296133.webdev.cmaisonneuve.qc.ca/cadricielwebtp2/)** 
+- LIEN VERS LE PROJET(WEBDEV): A NOTER QUE LA VERSION NE FONCTIONNE PAS CORRECTEMENT, vous m'avez corrigé le travail directement.  **[https://e2296133.webdev.cmaisonneuve.qc.ca/cadricieltp2v2COPY/](https://e2296133.webdev.cmaisonneuve.qc.ca/cadricieltp2v2COPY/)** 
 
 USER:
 - User: francois@francois.com
@@ -42,7 +42,7 @@ Pour compléter le système et le mettre en production, le client a demandé 2 a
 Le système doit avoir 
 -   [x] un forum dans lequel les étudiants peuvent écrire des articles. 
 -   [x] Les articles doivent être visibles par tous les étudiants connectés. 
--   [ ] Seul l'étudiant qui a écrit l'article peut le modifier et/ou le supprimer. (2 pts)
+-   [X] Seul l'étudiant qui a écrit l'article peut le modifier et/ou le supprimer. (2 pts)
 
 Pour créer le forum 
 -   [x] il faut ajouter un tableau dans la base de données, il est important d'enregistrer 
@@ -115,17 +115,17 @@ https://github.com/fhmaisonneuve/s4CadricielWeb_TP2_Laravel-Public
 
 #### Déposez le fichier ZIP, sur Léa - Omnivox.
 Vous devez m'envoyer sur Omnivox :
--   [ ] Enregistrez le projet avec une extension ZIP et 
--   [ ] ajoutez la documentation (lisez-moi) à la racine du projet et la déposer dans omnivox
+-   [X] Enregistrez le projet avec une extension ZIP et 
+-   [X] ajoutez la documentation (lisez-moi) à la racine du projet et la déposer dans omnivox
 -   [x] Ajoutez dans la documentation le lien pour y accéder le projet sur WebDev ou un autre serveur public, 
 ```
 voir readme
 ```
--   [ ] aussi comme le nom d’utilisateur et le mot de passe d’un étudiant enregistré dans le système. 
+-   [X] aussi comme le nom d’utilisateur et le mot de passe d’un étudiant enregistré dans le système. 
 ```
 User: francois@francois.com
 Password: francois
 ```
--   [ ] Ajouter dans le document le lien GitHub.
+-   [X] Ajouter dans le document le lien GitHub.
 
 ---
